@@ -7,7 +7,6 @@ Display images inside of the terminal
 Creates a dynamically generated gradient image taken from passed arguments
 
 <img src="screenshots/5f8aa78.png" alt="running_screenshot">
-
 ---
 
 ### To-Do
@@ -32,5 +31,3 @@ Call the build system:
 
 ### Running
     ./climage
-
-<img src="screenshots/5f8aa78.png" alt="running_screenshot">
