@@ -1,0 +1,7 @@
+# IDE
+.idea
+
+# CMake
+build/*
+!build/climage
+cmake-build-debug/
