@@ -1,5 +1,5 @@
 # climage
-Display images inside of the terminal
+Display images inside the terminal using 24-bit colors
 
 ---
 
