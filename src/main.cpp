@@ -6,10 +6,17 @@
 #include <sstream>
 #include "Image.h"
 #include "Pixel.h"
+#include "Terminal.h"
 
 
 int main(int argc, char **argv) {
-//    std::cout << "\033[32;41;4m   lol   \033[0m\n";
+    // Set terminal window size
+    Terminal terminal;
+    terminal.setSize();
+
+    auto termSize = terminal.getSize();
+
+    std::cout << "term size => x: " << termSize.first << " y: " << termSize.second << "\n";
 
     if (argc != 3) {
         std::cout << "Must have two parameters - x, y\n";
@@ -29,7 +36,7 @@ int main(int argc, char **argv) {
     std::cout << "Args: " << x << ", " << y << "\n";
 
 
-    Image image(x, y);
+    Image image(termSize.first, termSize.second - 1);
 
     std::pair<unsigned int, unsigned int> imageSize = image.getSize();
     std::cout << "Image size => x: " << imageSize.first << " y: " << imageSize.second << "\n";
@@ -40,5 +47,9 @@ int main(int argc, char **argv) {
 
     image.drawImage();
 
-    return 0;
+    std::cout << "Press ENTER to quit...";
+    std::string t;
+    if (std::getline(std::cin, t)) {
+        return 0;
+    }
 }

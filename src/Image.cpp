@@ -33,10 +33,10 @@ void Image::drawRectangle() const {
 
 void Image::createImage() {
     // Create pixels
-    for (int x = 0; x < xSize / 2; ++x) {
+    for (int x = 0; x < ySize; ++x) {
         std::vector<Pixel> row;
-        for (int y = 0; y < ySize; ++y) {
-            Pixel pixel(255-y*10, 155-x*10, 0);
+        for (int y = 0; y < xSize; ++y) {
+            Pixel pixel(255-y, 155-x, 0);
             row.push_back(pixel);
         }
         pixels.push_back(row);
@@ -44,8 +44,8 @@ void Image::createImage() {
 }
 
 void Image::drawImage() {
-    for (int x = 0; x < xSize / 2; ++x) {
-        for (int y = 0; y < ySize; ++y) {
+    for (int x = 0; x < ySize; ++x) {
+        for (int y = 0; y < xSize; ++y) {
             std::cout << "\033[48;2;" << pixels[x][y].getColors24bit() << "m \033[0m";
         }
         std::cout << "\n";
