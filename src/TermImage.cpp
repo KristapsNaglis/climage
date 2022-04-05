@@ -13,24 +13,6 @@ std::pair<unsigned int, unsigned int> TermImage::getSize() {
     return {xSize, ySize};
 }
 
-void TermImage::drawRectangle() const {
-    std::vector<unsigned int> rgb{0, 0, 0};
-    unsigned int step = 255 / ((xSize / 2) * ySize);
-
-    unsigned int counter = 0;
-    for (int x = 0; x < xSize / 2; ++x) {
-        for (int y = 0; y < ySize; ++y) {
-            std::cout << "\033[48;2;"
-                      << rgb[0] + step * counter << ";"
-                      << rgb[1] << ";"
-                      << rgb[2] << "m \033[0m";
-            counter++;
-        }
-        counter++;
-        std::cout << "\n";
-    }
-}
-
 void TermImage::createImage() {
     // Create pixels
     for (int x = 0; x < ySize; ++x) {

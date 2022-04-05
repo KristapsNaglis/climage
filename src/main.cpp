@@ -2,8 +2,8 @@
 // Created by kristapsn on 02.04.22.
 //
 
+//#include <sstream>
 #include <iostream>
-#include <sstream>
 #include "TermImage.h"
 #include "Pixel.h"
 #include "Terminal.h"
@@ -24,27 +24,22 @@ int main(int argc, char **argv) {
     }
 
     // Need to improve conversion from argv string to uint
-    std::istringstream issX(argv[1]);
-    unsigned int x;
-    issX >> x;
+//    std::istringstream issX(argv[1]);
+//    unsigned int x;
+//    issX >> x;
+//
+//    std::istringstream issY(argv[2]);
+//    unsigned int y;
+//    issY >> y;
 
-    std::istringstream issY(argv[2]);
-    unsigned int y;
-    issY >> y;
-
-
-    std::cout << "Args: " << x << ", " << y << "\n";
-
+//    std::cout << "Args: " << x << ", " << y << "\n";
 
     TermImage image(termSize.first, termSize.second - 1);
 
     std::pair<unsigned int, unsigned int> imageSize = image.getSize();
-    std::cout << "TermImage size => x: " << imageSize.first << " y: " << imageSize.second << "\n";
-
-//    image.drawRectangle();
+    std::cout << "Image size => x: " << imageSize.first << " y: " << imageSize.second << "\n";
 
     image.createImage();
-
     image.drawImage();
 
     std::cout << "Press ENTER to quit...";

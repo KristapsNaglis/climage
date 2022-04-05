@@ -24,10 +24,10 @@ public:
 
     std::pair<unsigned int, unsigned int> getSize();
 
-    void drawRectangle() const;
-
+    // Initialize pixels
     void createImage();
 
+    // Output pixels
     void drawImage();
 
 };
