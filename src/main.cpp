@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <sstream>
-#include "Image.h"
+#include "TermImage.h"
 #include "Pixel.h"
 #include "Terminal.h"
 
@@ -36,10 +36,10 @@ int main(int argc, char **argv) {
     std::cout << "Args: " << x << ", " << y << "\n";
 
 
-    Image image(termSize.first, termSize.second - 1);
+    TermImage image(termSize.first, termSize.second - 1);
 
     std::pair<unsigned int, unsigned int> imageSize = image.getSize();
-    std::cout << "Image size => x: " << imageSize.first << " y: " << imageSize.second << "\n";
+    std::cout << "TermImage size => x: " << imageSize.first << " y: " << imageSize.second << "\n";
 
 //    image.drawRectangle();
 

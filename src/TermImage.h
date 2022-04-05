@@ -10,13 +10,13 @@
 #define CLIMAGE_IMAGE_H
 
 
-class Image {
+class TermImage {
 private:
     unsigned int xSize{}, ySize{};
     std::vector<std::vector<Pixel>> pixels = {};
 
 public:
-    Image(const unsigned int x, const unsigned int y){
+    TermImage(const unsigned int x, const unsigned int y){
         setSize(x, y);
     }
 

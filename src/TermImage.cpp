@@ -2,18 +2,18 @@
 // Created by kristapsn on 02.04.22.
 //
 
-#include "Image.h"
+#include "TermImage.h"
 
-void Image::setSize(const unsigned int &x, const unsigned int &y) {
+void TermImage::setSize(const unsigned int &x, const unsigned int &y) {
     xSize = x;
     ySize = y;
 }
 
-std::pair<unsigned int, unsigned int> Image::getSize() {
+std::pair<unsigned int, unsigned int> TermImage::getSize() {
     return {xSize, ySize};
 }
 
-void Image::drawRectangle() const {
+void TermImage::drawRectangle() const {
     std::vector<unsigned int> rgb{0, 0, 0};
     unsigned int step = 255 / ((xSize / 2) * ySize);
 
@@ -31,7 +31,7 @@ void Image::drawRectangle() const {
     }
 }
 
-void Image::createImage() {
+void TermImage::createImage() {
     // Create pixels
     for (int x = 0; x < ySize; ++x) {
         std::vector<Pixel> row;
@@ -43,7 +43,7 @@ void Image::createImage() {
     }
 }
 
-void Image::drawImage() {
+void TermImage::drawImage() {
     for (int x = 0; x < ySize; ++x) {
         for (int y = 0; y < xSize; ++y) {
             std::cout << "\033[48;2;" << pixels[x][y].getColors24bit() << "m \033[0m";
