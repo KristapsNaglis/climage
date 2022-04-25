@@ -7,6 +7,7 @@
 #include "TermImage.h"
 #include "Pixel.h"
 #include "Terminal.h"
+#include "Images/BMP.h"
 
 
 int main(int argc, char **argv) {
@@ -41,6 +42,9 @@ int main(int argc, char **argv) {
 
     image.createImage();
     image.drawImage();
+
+    BMP bmp("../resources/venus.bmp");
+    bmp.getFileSize();
 
     std::cout << "Press ENTER to quit...";
     std::string t;
