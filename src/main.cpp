@@ -35,16 +35,18 @@ int main(int argc, char **argv) {
 
 //    std::cout << "Args: " << x << ", " << y << "\n";
 
-    TermImage image(termSize.first, termSize.second - 1);
-
-    std::pair<unsigned int, unsigned int> imageSize = image.getSize();
-    std::cout << "Image size => x: " << imageSize.first << " y: " << imageSize.second << "\n";
-
-    image.createImage();
-    image.drawImage();
+// =========================
+// TERMIMAGE
+//    TermImage image(termSize.first, termSize.second - 1);
+//
+//    std::pair<unsigned int, unsigned int> imageSize = image.getSize();
+//    std::cout << "Image size => x: " << imageSize.first << " y: " << imageSize.second << "\n";
+//
+//    image.createImage();
+//    image.drawImage();
 
     BMP bmp("../resources/venus.bmp");
-    bmp.getFileSize();
+//    bmp.getFileSize();
 
     std::cout << "Press ENTER to quit...";
     std::string t;
